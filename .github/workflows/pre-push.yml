@@ -1,0 +1,46 @@
+name: preparation-push
+env:
+  VERCEL_ORG_ID: ${{secrets.VERCEL_ORG_ID}}
+  VERCEL_PROJECT_ID: ${{secrets.VERCEL_PROJECT_ID}}
+on:
+  pull_request:
+    branches:
+      - 'master'
+      - 'main'
+      - 'development'
+      - 'feature/**'
+jobs:
+  test_and_preview:
+    strategy:
+      matrix:
+        bun-version: [1.0.11]
+        os: [ubuntu-latest]
+    runs-on: ${{matrix.os}}
+
+    steps:
+      - name: checkout-code
+        uses: actions/checkout@v4
+
+      - name: setup-bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: ${{matrix.bun-version}}
+
+      - name: Install package
+        run: |
+          echo "We are using a new js-runtime Bun to install package"
+          bun install
+      - name: Run check format and test
+        run: |
+          bun format
+      - name: Build
+        run: |
+          bun build:service
+      - name: Install Vercel CLI
+        run: bun install vercel@latest
+      - name: Pull Vercel Environment Information
+        run: vercel pull --yes --environment=production --token=${{secrets.VERCEL_TOKEN}}
+      - name: Build Project Artifacts
+        run: vercel build --prod --token=${{secrets.VERCEL_TOKEN}}
+      - name: Deploy Project Artifacts to Vercel
+        run: vercel deploy --prebuilt --prod --token=${{secrets.VERCEL_TOKEN}}

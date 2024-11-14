@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  body {
+    overflow-x: hidden;
+    font-family: Roboto ,system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',  Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    height: 100%;
+  }
+  input:focus-visible {
+    outline: none;
+  }
+  .item-content-hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition-property: opacity, filter, transform;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+  }
+  .item-content-hidden-right {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(100%);
+    transition-property: opacity, filter, transform;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+  }
+  .item-content-show {
+    filter: blur(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+  .item:nth-child(1){
+    transition-delay: 200ms;
+  }
+  .item:nth-child(2){
+    transition-delay: 400ms;
+  }
+  .item:nth-child(3){
+    transition-delay: 600ms;
+  }
+  .item:nth-child(4){
+    transition-delay: 800ms;
+  }
+  .item:nth-child(5){
+    transition-delay: 1000ms;
+  }
+}
