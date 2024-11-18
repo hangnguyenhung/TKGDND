@@ -2,8 +2,8 @@ import React from 'react'
 import { HeaderHomeComponent } from './component/HeaderHomeComponent'
 import { NewBookHomeComponent } from './component'
 import BestSellerComponent from './component/BestSellerComponent'
-import { FaBookOpen, FaPager, FaTruckMonster } from 'react-icons/fa'
 import ListPostComponent from './component/ListPostComponent'
+import HotSaleComponent from './component/HotSaleComponent'
 
 const HomeView: React.FC = () => {
   return (
@@ -11,21 +11,28 @@ const HomeView: React.FC = () => {
       <HeaderHomeComponent />
       <NewBookHomeComponent />
       <BestSellerComponent />
+      <HotSaleComponent />
 
-      <div className='w-full  bg-[#4848A4] flex flex-col justify-center items-center space-y-8 py-8'>
-        <p className='text-4xl font-medium text-white'>BANU STORE - TIỆM SÁCH CỦA BẠN</p>
+      <div className='w-full flex flex-col justify-center items-center space-y-8 py-8 bg-gray-100'>
+        <p className='text-4xl font-medium'>DANH MỤC CHÍNH SÁCH</p>
         <div className='flex flex-row space-x-36'>
           <div className='flex flex-col items-center space-y-4 w-52'>
-            <FaTruckMonster size={120} color={'white'} />
-            <p className='text-2xl text-center text-white'>Vân chuyển nhanh chóng</p>
+            {/* <FaTruckMonster size={120} className='text-gray-400' />
+            <p className='text-2xl text-center'>Vân chuyển nhanh chóng</p> */}
+            <div className='h-[120px] aspect-square bg-gray-200'></div>
+            <p className='text-2xl text-center'>Option 1</p>
           </div>
           <div className='flex flex-col items-center space-y-4 w-52'>
-            <FaPager size={120} color={'white'} />
-            <p className='text-2xl text-center text-white'>Khuyến mãi hấp dẫn</p>
+            {/* <FaPager size={120} className='text-gray-400' />
+            <p className='text-2xl text-center'>Khuyến mãi hấp dẫn</p> */}
+            <div className='h-[120px] aspect-square bg-gray-200'></div>
+            <p className='text-2xl text-center'>Option 2</p>
           </div>
           <div className='flex flex-col items-center space-y-4 w-52'>
-            <FaBookOpen size={120} color={'white'} />
-            <p className='text-2xl text-center text-white'>Sách truyện phong phú</p>
+            {/* <FaBookOpen size={120} className='text-gray-400' />
+            <p className='text-2xl text-center'>Sách truyện phong phú</p> */}
+            <div className='h-[120px] aspect-square bg-gray-200'></div>
+            <p className='text-2xl text-center'>Option 3</p>
           </div>
         </div>
       </div>
@@ -33,18 +40,11 @@ const HomeView: React.FC = () => {
 
       <div
         style={{ backgroundImage: 'url(https://customafk.s3.ap-southeast-1.amazonaws.com/IE106/header-expect.png)' }}
-        className='w-screen h-[27rem] flex flex-col justify-center items-center space-y-4 bg-[#4848A4] text-white'
+        className='w-screen h-[27rem] flex flex-col justify-center items-center space-y-4 bg-gray-100'
       >
-        <div className='w-screen h-full flex flex-col justify-center items-center space-y-4 bg-[#4848A4]/60 text-white'>
-          <p className='mt-8 text-6xl font-medium'>HÃY ĐẾN CỬA HÀNG CỦA CHÚNG TÔI</p>
-          <p className='text-2xl font-medium'>Khu phố 6, P.Linh Trung, Tp.Thủ Đức, Tp.Hồ Chí Minh</p>
-          <div className='flex items-center justify-center py-4'>
-            <button className='w-[15.75rem] py-2 border-[2px] border-solid border-white rounded-3xl text-white font-medium'>
-              <a href='https://oven.sh/' target='_blank'>
-                Tìm hiểu thêm
-              </a>
-            </button>
-          </div>
+        <div className='w-screen h-full flex flex-col justify-center items-center space-y-4'>
+          <p className='mt-8 text-6xl font-medium'>Quảng cáo</p>
+          <div className='flex items-center justify-center py-4'></div>
         </div>
       </div>
     </article>

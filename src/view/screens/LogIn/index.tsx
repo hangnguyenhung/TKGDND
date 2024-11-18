@@ -1,25 +1,22 @@
 import React from 'react'
-import { FaEye } from 'react-icons/fa'
-import { FaEyeLowVision } from 'react-icons/fa6'
-import { useNavigate } from 'react-router-dom'
-import { useRecoilState, useRecoilValue } from 'recoil'
-import { logInFormState, logInState } from './store/atom'
-import { useLogIn } from './store/hook'
-import { FadeLoader } from 'react-spinners'
+import { useRecoilValue } from 'recoil'
+import { logInState } from './store/atom'
+// import { useLogIn } from './store/hook'
+// import { FadeLoader } from 'react-spinners'
 const LogInView: React.FC = () => {
-  const navigate = useNavigate()
-  const [isShowPassword, setIsShowPassword] = React.useState<boolean>(false)
-  const [logInForm, setLogInForm] = useRecoilState(logInFormState)
+  //   const navigate = useNavigate()
+  //   const [isShowPassword, setIsShowPassword] = React.useState<boolean>(false)
+  //   const [logInForm, setLogInForm] = useRecoilState(logInFormState)
   const logIn = useRecoilValue(logInState)
-  const { onLogIn } = useLogIn()
+  //   const { onLogIn } = useLogIn()
   return (
     <div className='flex items-center justify-center w-screen h-screen'>
-      <form action='' className='w-[46.875rem]  shadow-2xl py-20 px-24'>
+      <form action='' className='w-[46.875rem] border bg-gray-100 py-20 px-24'>
         <div className='flex flex-col space-y-8'>
-          <div className='text-5xl font-light'>ĐĂNG NHẬP</div>
+          <div className='text-5xl font-light text-center'>ĐĂNG NHẬP</div>
 
           <div className='flex flex-col space-y-8'>
-            <input
+            {/* <input
               type='text'
               value={logInForm.email}
               placeholder='Tên đăng nhập hoặc email'
@@ -51,13 +48,18 @@ const LogInView: React.FC = () => {
                   <FaEyeLowVision />
                 </div>
               )}
+            </div> */}
+
+            <div className='w-full h-14 flex items-center justify-center border text-xl rounded-md'>
+              Tên đăng nhập hoặc email
             </div>
+            <div className='w-full h-14 flex items-center justify-center border text-xl rounded-md'>Mật khẩu</div>
           </div>
           {logIn.state === 'hasError' && <div className='text-[#D50000] text-xl pl-8'>{logIn.message}</div>}
 
-          <div className='text-[#7775C5] text-2xl font-bold'>Quên mật khẩu?</div>
+          <div className='text-2xl font-bold text-center'>Quên mật khẩu?</div>
 
-          <div className='flex justify-center w-full h-20'>
+          {/* <div className='flex justify-center w-full h-20'>
             <button
               onClick={(event) => {
                 event.preventDefault()
@@ -68,13 +70,17 @@ const LogInView: React.FC = () => {
               {logIn.state === 'loading' && <FadeLoader color='white' />}
               {(logIn.state === 'idle' || logIn.state === 'hasError') && 'Đăng nhập'}
             </button>
+          </div> */}
+          <div className='text-center'>
+            <button className='bg-gray-300 px-6 text-xl h-12 w-[300px]'>Đăng nhập</button>
           </div>
-          <div className='flex flex-row justify-center text-2xl'>
+
+          {/* <div className='flex flex-row justify-center text-2xl'>
             Chưa có tài khoản? &nbsp;{' '}
             <p onClick={() => navigate('/signup')} className='text-[#000080] font-bold hover:cursor-pointer'>
               Đăng ký ngay
             </p>
-          </div>
+          </div> */}
         </div>
       </form>
     </div>

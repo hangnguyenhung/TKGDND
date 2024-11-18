@@ -7,22 +7,16 @@ import React from 'react'
 export const LeftNavHeaderLayoutComponent = () => {
   const navigate = useNavigate()
   return (
-    <section className='flex flex-row text-white h-16 justify-center items-center px-1.5 animate-fade-right'>
+    <section className='flex flex-row text-white h-16 justify-center items-center animate-fade-right'>
       <div
         onClick={() => navigate('/home')}
-        className='w-44 hover:animate-jump hover:animate-duration-[700ms] hover:cursor-pointer h-full px-4 text-xl font-medium text-center  hover:bg-[#2F2F86]/60 flex items-center justify-center'
+        className='w-32 text-black cursor-pointer h-full text-xl font-medium text-center flex items-center justify-center'
       >
         <p>Trang chủ</p>
       </div>
       <div
-        onClick={() => navigate('/about')}
-        className='w-44 hover:animate-jump hover:animate-duration-[700ms] hover:cursor-pointer h-full px-4 text-xl font-medium text-center  hover:bg-[#2F2F86]/60 flex items-center justify-center'
-      >
-        Về chúng tôi
-      </div>
-      <div
         onClick={() => window.scrollTo(0, document.body.scrollHeight)}
-        className='w-44 hover:animate-jump hover:animate-duration-[700ms] hover:cursor-pointer h-full px-4 text-xl font-medium text-center  hover:bg-[#2F2F86]/60 flex items-center justify-center'
+        className='w-32 text-black cursor-pointer h-full text-xl font-medium text-center flex items-center justify-center'
       >
         Liên hệ
       </div>
@@ -41,16 +35,10 @@ export const RightNavHeaderLayoutComponent = () => {
       {logIn.state === 'hasValue' && <UserDetailHeaderComponent />}
       {logIn.state !== 'hasValue' && (
         <>
-          <div
-            onClick={() => navigate('/login')}
-            className='w-32 hover:bg-[#2F2F86]/60 hover:animate-jump hover:animate-duration-[700ms] hover:cursor-pointer text-xl font-medium text-center'
-          >
+          <div onClick={() => navigate('/login')} className='w-32 text-black font-medium text-center cursor-pointer'>
             Đăng nhập
           </div>
-          <div
-            onClick={() => navigate('/signup')}
-            className='w-32 hover:bg-[#2F2F86]/60 hover:animate-jump hover:animate-duration-[700ms] hover:cursor-pointer text-xl font-medium text-center'
-          >
+          <div onClick={() => navigate('/signup')} className='w-32 text-black font-medium text-center cursor-pointer'>
             Đăng ký
           </div>
         </>
@@ -60,7 +48,7 @@ export const RightNavHeaderLayoutComponent = () => {
 }
 export const NavHeaderLayoutComponent = () => {
   return (
-    <nav className='w-full bg-[#4848A4] h-16 flex flex-row justify-between'>
+    <nav className='w-full bg-gray-300 h-16 flex flex-row justify-between'>
       <LeftNavHeaderLayoutComponent />
       <RightNavHeaderLayoutComponent />
     </nav>

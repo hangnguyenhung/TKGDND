@@ -1,61 +1,52 @@
 import React from 'react'
-import Logo from '@/assets/logo-hor.svg?react'
-import { FiFacebook, FiInstagram, FiTwitter, FiYoutube } from 'react-icons/fi'
 
 const FooterLayout: React.FC = () => {
   return (
-    <div className='w-screen flex flex-row space-x-2.5 py-16 border-t-[0.5px] border-solid border-zinc-600  mt-12'>
-      <div className='flex flex-col w-1/3 px-6 space-y-4 text-2xl font-[400]'>
-        <Logo className='h-32' />
-        <div>Hotline: 022XXXX</div>
-        <div>Địa chỉ: Khu phố 6, P.Linh Trung, Tp.Thủ Đức, Tp.Hồ Chí Minh</div>
-        <div>Email: online@gmail.com</div>
+    <div className='w-screen flex flex-row py-16 border-t-[0.5px] border-solid border mt-12'>
+      <div className='flex flex-col w-1/3 px-6 space-y-4 text-2xl font-[400] justify-center items-center'>
+        {/* <Logo className='h-32' /> */}
+        <div className='h-[100px] w-[200px] text-center flex items-center justify-center bg-gray-300'>LOGO</div>
+        <div className='bg-gray-200 w-full text-center px-4 py-2'>Số điện thoại</div>
+        <div className='bg-gray-200 w-full text-center px-4 py-2'>Địa chỉ</div>
+        <div className='bg-gray-200 w-full text-center px-4 py-2'>Email</div>
       </div>
-
-      <div className='flex flex-row w-1/3 px-2 text-2xl font-[400] space-x-8'>
-        <div className='flex flex-col space-y-4 text-2xl grow'>
-          <div className='font-bold'>HỖ TRỢ KHÁCH HÀNG</div>
-          <div className='font-[350]'>Câu hỏi thường gặp </div>
-          <div className='font-[350]'>Điều khoản dịch vụ</div>
+      <div className='grid grid-cols-3 gap-6 pr-10 flex-1'>
+        <div className='flex flex-col space-y-4 text-2xl'>
+          <div className='font-bold'>HỖ TRỢ</div>
+          <div className='font-[350] bg-gray-200 text-center px-2'>Link</div>
+          <div className='font-[350] bg-gray-200 text-center px-2'>Link</div>
+          <div className='font-[350] bg-gray-200 text-center px-2'>Link</div>
+          <div className='font-[350] bg-gray-200 text-center px-2'>Link</div>
         </div>
         <div className='flex flex-col space-y-4 text-2xl'>
           <div className='font-bold'>CHÍNH SÁCH</div>
-          <div className='font-[350]'>Chính sách bảo mật</div>
-          <div className='font-[350]'>Chính sách thanh toán</div>
-          <div className='font-[350]'>Chính sách vận chuyển</div>
-          <div className='font-[350]'>Chính sách đổi trả</div>
+          <div className='font-[350] bg-gray-200 text-center px-2'>Link</div>
+          <div className='font-[350] bg-gray-200 text-center px-2'>Link</div>
+          <div className='font-[350] bg-gray-200 text-center px-2'>Link</div>
+          <div className='font-[350] bg-gray-200 text-center px-2'>Link</div>
         </div>
-      </div>
 
-      <div className='flex flex-row w-1/3 pl-28 text-2xl font-[400] space-x-8'>
-        <div className='flex flex-col space-y-8 text-2xl grow'>
-          <div className='font-bold'>KẾT NỐI VỚI CHÚNG TÔI</div>
+        <div className='flex flex-col gap-4 text-2xl font-[400] space-x-8'>
+          <div className='font-bold'>Thông tin mạng xã hội</div>
 
-          <div className='font-[350] flex pl-8 items-center space-x-2'>
-            <FiFacebook size={'32px'} />
+          <div className='!m-0 font-[350] bg-gray-200 items-center justify-center flex space-x-2'>
             <a href='https://www.facebook.com/customafk' target='_blank'>
-              Facebook
+              Link
             </a>
           </div>
-
-          <div className='font-[350] flex pl-8 items-center space-x-2'>
-            <FiInstagram size={'32px'} />
-            <a href='https://www.Instagram.com' target='_blank'>
-              Instagram
+          <div className='!m-0 font-[350] bg-gray-200 items-center justify-center flex space-x-2'>
+            <a href='https://www.facebook.com/customafk' target='_blank'>
+              Link
             </a>
           </div>
-
-          <div className='font-[350] flex pl-8 items-center space-x-2'>
-            <FiTwitter size={'32px'} />
-            <a href='https://twitter.com/' target='_blank'>
-              Twitter
+          <div className='!m-0 font-[350] bg-gray-200 items-center justify-center flex space-x-2'>
+            <a href='https://www.facebook.com/customafk' target='_blank'>
+              Link
             </a>
           </div>
-
-          <div className='font-[350] flex pl-8 items-center space-x-2'>
-            <FiYoutube size={'32px'} />
-            <a href='https://www.youtube.com/channel/UCmsM9BU8R7Wh5uVE242CKmw' target='_blank'>
-              Youtube
+          <div className='!m-0 font-[350] bg-gray-200 items-center justify-center flex space-x-2'>
+            <a href='https://www.facebook.com/customafk' target='_blank'>
+              Link
             </a>
           </div>
         </div>

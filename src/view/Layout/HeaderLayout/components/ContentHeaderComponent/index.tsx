@@ -1,14 +1,10 @@
-import { NotificationContentHeaderComponent, SearchContentHeaderComponent } from './components'
+import { SearchContentHeaderComponent } from './components'
 
 export const ContentHeaderComponent = () => {
   return (
-    <article className='grid content-center w-full grid-cols-12 pt-4 bg-white justify-items-center'>
-      <NotificationContentHeaderComponent />
-      <div className='w-full h-full col-span-2 bg-purple-600 animate-rotate-x'>
-        <img
-          src='https://customafk.s3.ap-southeast-1.amazonaws.com/IE104/Screenshot%202023-11-18%20at%2010.46.55%E2%80%AFPM.png'
-          alt=''
-        />
+    <article className=' flex items-center justify-between px-10 py-2 bg-white justify-items-center'>
+      <div className='w-[150px] h-10 flex items-center col-span-2 bg-gray-200 animate-rotate-x'>
+        <p className='mx-auto font-bold'>LOGO</p>
       </div>
       <SearchContentHeaderComponent />
     </article>
