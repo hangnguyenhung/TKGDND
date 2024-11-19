@@ -7,7 +7,7 @@ export const SearchContentHeaderComponent = () => {
   const [textInput, setTextInput] = React.useState<string | null>(null)
   return (
     <section className='flex items-center justify-center gap-4'>
-      <div className=' flex items-center justify-between border-2 w-[300px] rounded-2xl py-2 px-4 border-solid'>
+      <div className=' flex items-center justify-between w-[300px] bg-gray-100 py-2 px-4 border-solid'>
         <input
           placeholder='Tìm kiếm '
           type='text'
@@ -15,6 +15,7 @@ export const SearchContentHeaderComponent = () => {
           onChange={(event) => {
             setTextInput(event.target.value)
           }}
+          className='bg-gray-100'
           onSubmit={() => navigate(`/search?q=${textInput}`)}
           onKeyDown={(event) => {
             if (event.key === 'Enter') navigate(`/search?q=${textInput}`)
